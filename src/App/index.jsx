@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
 import GlobalStyles from "../globalStyles";
-
-import { ISSUES_QUERY } from '../graphql/queries/issues';
 
 import { DialogGit } from '../components/Dialog';
 import { Issues } from '../components/Issues';

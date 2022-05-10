@@ -1,12 +1,11 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-
 import { ISSUES_QUERY } from '../../graphql/queries/issues';
 
 export const Issues = ({owner = 'sebastien-plutniak', name = 'archeofrag'}) => {
   
-  const { loading, error, data } = useQuery(ISSUES_QUERY, {
+  const { error, data } = useQuery(ISSUES_QUERY, {
     variables: {
       owner: owner,
       name: name,
