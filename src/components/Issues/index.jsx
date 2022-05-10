@@ -3,7 +3,13 @@ import { useQuery } from '@apollo/client';
 
 import { ISSUES_QUERY } from '../../graphql/queries/issues';
 
-export const Issues = ({owner = 'sebastien-plutniak', name = 'archeofrag'}) => {
+import { IssuesItem } from '../IssuesItem';
+
+import { Wrapper } from './style';
+
+export const Issues = ({ owner, name }) => {
+  
+  const [id, setId] = React.useState(1)
   
   const { error, data } = useQuery(ISSUES_QUERY, {
     variables: {
@@ -13,17 +19,19 @@ export const Issues = ({owner = 'sebastien-plutniak', name = 'archeofrag'}) => {
       first: 0
     }
   });
-  console.log(data)
-
-  
+    
 
   if (error) {
     return <h1>Error Data ...</h1>;
   }
 
   return (
-    
-      <h1>123</h1>
-    
+    <Wrapper>
+      <h1>{owner}</h1>
+      {data && data != null && data.repository.issues.edges.map(el => (
+        <IssuesItem el={el} key={el.node.number} id={id} setId={setId}/>
+        )
+      )}
+    </Wrapper>    
   );
 }
