@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   fontSize: 15px;
   padding: 10px;
   box-shadow: 0 2px 5px #ccc;
-  border-radius: 7px; 
+  border-radius: 7px;
 `
 
 export const PIssues = styled.p`
@@ -26,4 +26,12 @@ export const Block = styled.div`
 `
 export const Text = styled.span`
   font-size: 12px;
+`
+export const CommentsBlock = styled.div`
+  
+`
+export const Count = styled.span`
+  font-size: 14px;
+  margin-left: 5px;
+  margin-bottom: 20px;
 `

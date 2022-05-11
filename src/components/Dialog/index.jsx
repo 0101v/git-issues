@@ -8,8 +8,8 @@ import {
 
 export const DialogGit = ({ addRepository }) => {
   const [open, setOpen] = useState(true);
-  const [owner, setOwner] = useState('sebastien-plutniak');
-  const [name, setName] = useState('archeofrag');
+  const [owner, setOwner] = useState('0101v');
+  const [name, setName] = useState('git-issues');
 
   const onClick = (e) => {
     e.preventDefault();

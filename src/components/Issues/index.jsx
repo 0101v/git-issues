@@ -15,8 +15,8 @@ export const Issues = ({ owner, name }) => {
     variables: {
       owner: owner,
       name: name,
-      last: 50,
-      first: 0
+      last: 20,
+      first: 20
     }
   });
     
