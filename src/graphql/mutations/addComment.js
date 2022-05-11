@@ -1,6 +1,6 @@
 import {gql} from "@apollo/client";
 
-export const ADDCOMMENT = gql `
+export const ADDCOMMENTS = gql `
     mutation AddComment($subjectId:ID!,$clientMutationId:String!,$body:String!) {
         addComment(input: {
             subjectId: $subjectId,
