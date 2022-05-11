@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { DialogGit } from '../components/Dialog';
 import { Issues } from '../components/Issues';
+import { ViewIssues } from '../components/ViewIssues';
 
 import { Wrapper } from './style';
 
@@ -11,14 +12,12 @@ export const Container = () => {
   const addRepository = (owner, name) => {
     setState({owner, name})
   }
-
-  console.log(state)
   
   return (
     <Wrapper>
       <DialogGit addRepository={addRepository}/>
-      { state.owner && <Issues owner={state.owner} name={state.name}/>}
-      <div>asdasd</div>
+      { state.owner && <Issues owner={state.owner} name={state.name} />}
+      <ViewIssues />
     </Wrapper>
   );
 }

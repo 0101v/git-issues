@@ -1,6 +1,6 @@
 import {gql} from "@apollo/client";
 
-export const ISSUE_ID  = gql `
+const ISSUE_ID  = gql `
     query FindIssueID($owner:String!,$name:String!,$number:Int!) {
         repository(owner: $owner, name: $name) {
             issue(number: $number) {
@@ -9,3 +9,5 @@ export const ISSUE_ID  = gql `
         }
     }
 `
+
+export default ISSUE_ID;
