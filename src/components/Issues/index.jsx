@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { useQuery } from '@apollo/client';
 
 import { ISSUES_QUERY } from '../../graphql/queries/issues';
@@ -15,12 +16,9 @@ export const Issues = ({ owner, name }) => {
     variables: {
       owner: owner,
       name: name,
-      last: 20,
-      first: 20
     },
-    pollInterval: 500,
+    pollInterval: 1000,
   });
-    
 
   if (error) {
     return <h1>Error Data ...</h1>;

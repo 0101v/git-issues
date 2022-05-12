@@ -47,7 +47,6 @@ export const DialogGit = ({ addRepository }) => {
                 label="Enter Repository Owner"
                 name="text"
                 value={owner}
-
                 onChange={(e) => setOwner(e.target.value)}
               />
               <TextField
@@ -59,7 +58,6 @@ export const DialogGit = ({ addRepository }) => {
                 label="Enter Repository Name"
                 name="text"
                 value={name}
-
                 onChange={(e) => setName(e.target.value)}
               />
               <Button

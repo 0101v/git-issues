@@ -1,14 +1,12 @@
 import {gql} from "@apollo/client";
 
 export const ISSUES_QUERY = gql `
-    query Issues($owner:String!,$name:String!,$last:Int!,$first:Int!){
+    query Issues($owner:String!,$name:String!){
         repository(owner: $owner, name: $name) {
-            name
-            id
             owner{
                 login
             }
-            issues(last: $last) {
+            issues(last: 20) {
                 edges {
                     node {
                         title
@@ -17,7 +15,7 @@ export const ISSUES_QUERY = gql `
                         number
                         state
                         createdAt
-                        comments(first:$first){
+                        comments(first:30){
                             edges{
                                 node{
                                     body

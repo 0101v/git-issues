@@ -10,7 +10,7 @@ export const IssuesItem = ({ el, id, setElem }) => {
   
   const dispatch = useDispatch();
   const onClick = () => {
-    dispatch(addIssuesElem(el.node));
+    dispatch(addIssuesElem(el.node.number));
     setElem(el.node)
   }
 

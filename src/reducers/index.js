@@ -3,14 +3,14 @@ import {
 } from "../constants";
 
 const INITIAL_STATE = {
-    number: 1
+    id: 0
   }
 
 const reducer = (state = INITIAL_STATE, {type, payload}) => {
   switch (type) {
     
     case ADD_ISSUES_ELEM_ACTION:
-      return {...payload}
+      return payload
     
     default:
       return state

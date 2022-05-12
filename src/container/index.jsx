@@ -17,7 +17,7 @@ export const Container = () => {
     <Wrapper>
       <DialogGit addRepository={addRepository}/>
       { state.owner && <Issues owner={state.owner} name={state.name} />}
-      <ViewIssues />
+      { state.owner && <ViewIssues owner={state.owner} name={state.name}/>}
     </Wrapper>
   );
 }

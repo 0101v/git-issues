@@ -14,9 +14,9 @@ import {
   FormControl
 } from '@mui/material';
 
-export const AddComments = () => {
-  const issuesData = useSelector(state=>state);
-  const [owner, name, , id] = issuesData.url.split('/').slice(3, 7);
+export const AddComments = ({ owner, name }) => {
+  const id = useSelector(state=>state);
+  
   const { data } = useQuery(ISSUE_ID, {
     variables: {
       owner: owner,
@@ -24,10 +24,12 @@ export const AddComments = () => {
       number: Number(id)
     }
   });
+  
   const [state, setState] = useState('');
   const [addTodo, { loading, error }] = useMutation(ADDCOMMENTS);
   
-  const onClick = () => {    
+  const onClick = () => {
+    
     addTodo({
       variables: {
         subjectId: data.repository.issue.id,
@@ -35,7 +37,7 @@ export const AddComments = () => {
         body: state
         } 
     });
-    setState('')
+    setState('');
   }
 
   if (loading) return 'Submitting...';
@@ -56,17 +58,15 @@ export const AddComments = () => {
               textShadow: 'none'             
             }}
           >
-            <FormControl sx={{ m: 5}} >
+            <FormControl sx={{ m: 5}}>
               <TextField
                 variant="outlined"
                 margin="normal"
                 required
-                
                 id="text"
                 label="Enter Comments"
                 name="text"
                 value={state}
-
                 onChange={(e) => setState(e.target.value)}
               />
               <Button
