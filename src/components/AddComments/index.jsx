@@ -35,7 +35,7 @@ export const AddComments = () => {
         body: state
         } 
     });
-    
+    setState('')
   }
 
   if (loading) return 'Submitting...';

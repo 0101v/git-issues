@@ -17,7 +17,8 @@ export const Issues = ({ owner, name }) => {
       name: name,
       last: 20,
       first: 20
-    }
+    },
+    pollInterval: 500,
   });
     
 
